@@ -31,3 +31,5 @@ The pulse parameters from the initial dataset (from a traditional optimizer) and
 The gate fidelity between pairs of gates is calculated. Here, the mathematically-derived golden gate, the optimizer-generated gate, and the gate resulting from our model are compared.
 ### 05: Plot Results
 This notebook intakes the fidelity results and plots them.
+
+## Authors: David, Baris, Giuseppe...
