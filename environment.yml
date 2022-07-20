@@ -1,0 +1,25 @@
+name: ml4quantum-env
+channels:
+  - conda-forge
+dependencies:
+  - python=3.8
+  - jupyterhub
+  - pydot
+  - graphviz
+  - pip
+  - pip:
+    - jupyter
+    - tensorflow-cpu==2.4.0
+    - tensorflow_datasets
+    - pandas
+    - matplotlib
+    - hls4ml[profiling]==0.6.0
+    - qkeras==0.9.0
+    - scikit-learn
+    - keras_sequential_ascii
+      #- visualkeras
+      #- git+https://github.com/thesps/conifer.git
+
+### Experimental
+#    - git+https://github.com/hls4ml-finn-mlperftiny/hls4ml.git@fifo_depth_opt#egg=hls4ml[profiling]
+###
