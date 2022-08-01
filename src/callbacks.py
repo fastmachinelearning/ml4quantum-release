@@ -13,13 +13,13 @@ from pdb import set_trace
 import json
 
 class newline_callbacks_begin(Callback):
-    
+
     def __init__(self,outputDir):
         self.outputDir=outputDir
         self.loss=[]
         self.val_loss=[]
         self.full_logs=[]
-        
+
     def on_epoch_end(self,epoch, epoch_logs={}):
         import os
         lossfile=os.path.join( self.outputDir, 'losses.log')
@@ -32,7 +32,7 @@ class newline_callbacks_begin(Callback):
             f.write(" ")
             f.write(str(self.val_loss[i]))
             f.write("\n")
-        f.close()    
+        f.close()
         normed = {}
         for vv in epoch_logs:
             normed[vv] = float(epoch_logs[vv])
@@ -40,13 +40,13 @@ class newline_callbacks_begin(Callback):
         lossfile=os.path.join( self.outputDir, 'full_info.log')
         with open(lossfile, 'w') as out:
             out.write(json.dumps(self.full_logs))
-        
+
 class newline_callbacks_end(Callback):
     def on_epoch_end(self,epoch, epoch_logs={}):
         #print('\n***callbacks end***\n')
         pass
-        
-        
+
+
 class Losstimer(Callback):
     def __init__(self, every = 5):
         self.points = []
@@ -63,7 +63,7 @@ class Losstimer(Callback):
             cop[i] = float(j)
         cop['elapsed'] = elapsed
         self.points.append(cop)
-        
+
 class all_callbacks(object):
     def __init__(self,
                  stop_patience=10,
@@ -73,41 +73,41 @@ class all_callbacks(object):
                  lr_cooldown=4,
                  lr_minimum=1e-5,
                  outputDir=''):
-        
 
-        
+
+
         self.nl_begin=newline_callbacks_begin(outputDir)
         self.nl_end=newline_callbacks_end()
-        
-        self.stopping = EarlyStopping(monitor='val_loss', 
-                                      patience=stop_patience, 
+
+        self.stopping=EarlyStopping(monitor='val_loss',
+                                      patience=stop_patience,
                                       verbose=0, mode='min')
-        
-        self.reduce_lr = ReduceLROnPlateau(monitor='val_loss', factor=lr_factor, patience=lr_patience, 
+
+        self.reduce_lr=ReduceLROnPlateau(monitor='val_loss', factor=lr_factor, patience=lr_patience,
                                 mode='min', verbose=0, epsilon=lr_epsilon,
                                  cooldown=lr_cooldown, min_lr=lr_minimum)
 
-        self.modelbestcheck=ModelCheckpoint(outputDir+"/KERAS_check_best_model.h5", 
-                                        monitor='val_loss', verbose=0, 
+        self.modelbestcheck=ModelCheckpoint(outputDir+"/KERAS_check_best_model.h5",
+                                        monitor='val_loss', verbose=0,
                                         save_best_only=True)
 
-        self.modelbestcheckweights=ModelCheckpoint(outputDir+"/KERAS_check_best_model_weights.h5", 
-                                            monitor='val_loss', verbose=0, 
+        self.modelbestcheckweights=ModelCheckpoint(outputDir+"/KERAS_check_best_model_weights.h5",
+                                            monitor='val_loss', verbose=0,
                                             save_best_only=True,save_weights_only=True)
-                
+
         self.modelcheckperiod=ModelCheckpoint(outputDir+"/KERAS_check_model_epoch{epoch:02d}.h5", verbose=0,period=10)
-        
+
         self.modelcheck=ModelCheckpoint(outputDir+"/KERAS_check_model_last.h5", verbose=0)
 
         self.modelcheckweights=ModelCheckpoint(outputDir+"/KERAS_check_model_last_weights.h5", verbose=0,save_weights_only=True)
-        
+
         self.tb = TensorBoard(log_dir=outputDir+'/logs')
-  
+
         self.history=History()
-        self.timer = Losstimer()
-        
+        self.timer=Losstimer()
+
         self.callbacks=[
-            self.nl_begin, 
+            self.nl_begin,
             self.modelbestcheck,self.modelbestcheckweights, self.modelcheck,self.modelcheckweights,self.modelcheckperiod,
             self.reduce_lr, self.stopping, self.nl_end, self.tb, self.history,
             self.timer
