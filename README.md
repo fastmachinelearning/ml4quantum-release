@@ -38,6 +38,6 @@ We use the quantum control toolbox [Juqbox](https://github.com/LLNL/Juqbox.jl).
 
 ## Authors
 
-- David Xu
-- A. Baris Ozguler
-- Giuseppe Di Gugliemo
+- David Xu, Columbia University, dx2199@columbia.edu
+- A. Baris Ozguler, Fermilab, aozguler@fnal.gov
+- Giuseppe Di Gugliemo, Fermilab, gdg@fnal.gov
