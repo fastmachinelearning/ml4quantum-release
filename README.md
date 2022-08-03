@@ -32,4 +32,6 @@ The gate fidelity between pairs of gates is calculated. Here, the mathematically
 ### 05: Plot Results
 This notebook intakes the fidelity results and plots them.
 
+# We use the quantum control toolbox: https://github.com/LLNL/Juqbox.jl
+
 ## Authors: David, Baris, Giuseppe...
