@@ -1,5 +1,8 @@
 # ML4Quantum <!-- omit in toc -->
 Applying machine learning to quantum control <!-- omit in toc -->
+
+Repo for: Neural network accelerator for quantum control, https://arxiv.org/abs/2208.02645
+
 ## Table of Contents <!-- omit in toc -->
 - [Dependencies](#dependencies)
 - [Workflow](#workflow)
@@ -32,4 +35,12 @@ The gate fidelity between pairs of gates is calculated. Here, the mathematically
 ### 05: Plot Results
 This notebook intakes the fidelity results and plots them.
 
-## Authors: David, Baris, Giuseppe...
+## Acknowledgements
+
+We use the quantum control toolbox [Juqbox](https://github.com/LLNL/Juqbox.jl).
+
+## Authors
+
+- David Xu, Columbia University, d.xu@columbia.edu
+- A. Baris Ozguler, Fermilab, aozguler@fnal.gov
+- Giuseppe Di Gugliemo, Fermilab, gdg@fnal.gov
