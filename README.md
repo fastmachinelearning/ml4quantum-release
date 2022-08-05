@@ -1,5 +1,8 @@
 # ML4Quantum <!-- omit in toc -->
 Applying machine learning to quantum control <!-- omit in toc -->
+
+Repo for: Neural network accelerator for quantum control, https://arxiv.org/abs/2208.02645
+
 ## Table of Contents <!-- omit in toc -->
 - [Dependencies](#dependencies)
 - [Workflow](#workflow)
