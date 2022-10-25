@@ -1,0 +1,2 @@
+Date,EstimatedClockPeriod,BestLatency,WorstLatency,IntervalMin,IntervalMax,BRAM_18K,AvailableBRAM_18K,DSP48E,AvailableDSP48E,FF,AvailableFF,LUT,AvailableLUT,URAM,AvailableURAM
+25/10/2022 12:36:56,4.344,22,22,1,1,0,432,1152,360,29469,141120,68951,70560,0,0
