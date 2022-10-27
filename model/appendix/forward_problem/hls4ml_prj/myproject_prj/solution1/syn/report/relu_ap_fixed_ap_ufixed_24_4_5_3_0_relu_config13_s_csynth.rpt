@@ -1,0 +1,152 @@
+
+
+================================================================
+== Vivado HLS Report for 'relu_ap_fixed_ap_ufixed_24_4_5_3_0_relu_config13_s'
+================================================================
+* Date:           Tue Oct 25 22:21:46 2022
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        myproject_prj
+* Solution:       solution1
+* Product family: zynquplus
+* Target device:  xczu3eg-sbva484-1-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   5.00|     1.916|        0.62|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+----------+
+    |  Latency  |  Interval | Pipeline |
+    | min | max | min | max |   Type   |
+    +-----+-----+-----+-----+----------+
+    |    0|    0|    1|    1| function |
+    +-----+-----+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+-----+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  | URAM|
++-----------------+---------+-------+--------+-------+-----+
+|DSP              |        -|      -|       -|      -|    -|
+|Expression       |        -|      -|       0|    636|    -|
+|FIFO             |        -|      -|       -|      -|    -|
+|Instance         |        -|      -|       -|      -|    -|
+|Memory           |        -|      -|       -|      -|    -|
+|Multiplexer      |        -|      -|       -|      -|    -|
+|Register         |        -|      -|       -|      -|    -|
++-----------------+---------+-------+--------+-------+-----+
+|Total            |        0|      0|       0|    636|    0|
++-----------------+---------+-------+--------+-------+-----+
+|Available        |      432|    360|  141120|  70560|    0|
++-----------------+---------+-------+--------+-------+-----+
+|Utilization (%)  |        0|      0|       0|   ~0  |    0|
++-----------------+---------+-------+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP48E: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +----------------------------+----------+-------+---+----+------------+------------+
+    |        Variable Name       | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +----------------------------+----------+-------+---+----+------------+------------+
+    |icmp_ln1494_10_fu_366_p2    |   icmp   |      0|  0|  29|          64|           1|
+    |icmp_ln1494_11_fu_390_p2    |   icmp   |      0|  0|  29|          64|           1|
+    |icmp_ln1494_1_fu_150_p2     |   icmp   |      0|  0|  29|          64|           1|
+    |icmp_ln1494_2_fu_174_p2     |   icmp   |      0|  0|  29|          64|           1|
+    |icmp_ln1494_3_fu_198_p2     |   icmp   |      0|  0|  29|          64|           1|
+    |icmp_ln1494_4_fu_222_p2     |   icmp   |      0|  0|  29|          64|           1|
+    |icmp_ln1494_5_fu_246_p2     |   icmp   |      0|  0|  29|          64|           1|
+    |icmp_ln1494_6_fu_270_p2     |   icmp   |      0|  0|  29|          64|           1|
+    |icmp_ln1494_7_fu_294_p2     |   icmp   |      0|  0|  29|          64|           1|
+    |icmp_ln1494_8_fu_318_p2     |   icmp   |      0|  0|  29|          64|           1|
+    |icmp_ln1494_9_fu_342_p2     |   icmp   |      0|  0|  29|          64|           1|
+    |icmp_ln1494_fu_126_p2       |   icmp   |      0|  0|  29|          64|           1|
+    |select_ln1494_23_fu_166_p3  |  select  |      0|  0|  24|           1|          24|
+    |select_ln1494_24_fu_190_p3  |  select  |      0|  0|  24|           1|          24|
+    |select_ln1494_25_fu_214_p3  |  select  |      0|  0|  24|           1|          24|
+    |select_ln1494_26_fu_238_p3  |  select  |      0|  0|  24|           1|          24|
+    |select_ln1494_27_fu_262_p3  |  select  |      0|  0|  24|           1|          24|
+    |select_ln1494_28_fu_286_p3  |  select  |      0|  0|  24|           1|          24|
+    |select_ln1494_29_fu_310_p3  |  select  |      0|  0|  24|           1|          24|
+    |select_ln1494_30_fu_334_p3  |  select  |      0|  0|  24|           1|          24|
+    |select_ln1494_31_fu_358_p3  |  select  |      0|  0|  24|           1|          24|
+    |select_ln1494_32_fu_382_p3  |  select  |      0|  0|  24|           1|          24|
+    |select_ln1494_33_fu_406_p3  |  select  |      0|  0|  24|           1|          24|
+    |select_ln1494_fu_142_p3     |  select  |      0|  0|  24|           1|          24|
+    +----------------------------+----------+-------+---+----+------------+------------+
+    |Total                       |          |      0|  0| 636|         780|         300|
+    +----------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    N/A
+
+    * Register: 
+    N/A
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++----------------+-----+-----+------------+----------------------------------------------------+--------------+
+|    RTL Ports   | Dir | Bits|  Protocol  |                    Source Object                   |    C Type    |
++----------------+-----+-----+------------+----------------------------------------------------+--------------+
+|ap_ready        | out |    1| ap_ctrl_hs | relu<ap_fixed,ap_ufixed<24,4,5,3,0>,relu_config13> | return value |
+|ap_return_0     | out |   24| ap_ctrl_hs | relu<ap_fixed,ap_ufixed<24,4,5,3,0>,relu_config13> | return value |
+|ap_return_1     | out |   24| ap_ctrl_hs | relu<ap_fixed,ap_ufixed<24,4,5,3,0>,relu_config13> | return value |
+|ap_return_2     | out |   24| ap_ctrl_hs | relu<ap_fixed,ap_ufixed<24,4,5,3,0>,relu_config13> | return value |
+|ap_return_3     | out |   24| ap_ctrl_hs | relu<ap_fixed,ap_ufixed<24,4,5,3,0>,relu_config13> | return value |
+|ap_return_4     | out |   24| ap_ctrl_hs | relu<ap_fixed,ap_ufixed<24,4,5,3,0>,relu_config13> | return value |
+|ap_return_5     | out |   24| ap_ctrl_hs | relu<ap_fixed,ap_ufixed<24,4,5,3,0>,relu_config13> | return value |
+|ap_return_6     | out |   24| ap_ctrl_hs | relu<ap_fixed,ap_ufixed<24,4,5,3,0>,relu_config13> | return value |
+|ap_return_7     | out |   24| ap_ctrl_hs | relu<ap_fixed,ap_ufixed<24,4,5,3,0>,relu_config13> | return value |
+|ap_return_8     | out |   24| ap_ctrl_hs | relu<ap_fixed,ap_ufixed<24,4,5,3,0>,relu_config13> | return value |
+|ap_return_9     | out |   24| ap_ctrl_hs | relu<ap_fixed,ap_ufixed<24,4,5,3,0>,relu_config13> | return value |
+|ap_return_10    | out |   24| ap_ctrl_hs | relu<ap_fixed,ap_ufixed<24,4,5,3,0>,relu_config13> | return value |
+|ap_return_11    | out |   24| ap_ctrl_hs | relu<ap_fixed,ap_ufixed<24,4,5,3,0>,relu_config13> | return value |
+|data_0_V_read   |  in |   64|   ap_none  |                    data_0_V_read                   |    scalar    |
+|data_1_V_read   |  in |   64|   ap_none  |                    data_1_V_read                   |    scalar    |
+|data_2_V_read   |  in |   64|   ap_none  |                    data_2_V_read                   |    scalar    |
+|data_3_V_read   |  in |   64|   ap_none  |                    data_3_V_read                   |    scalar    |
+|data_4_V_read   |  in |   64|   ap_none  |                    data_4_V_read                   |    scalar    |
+|data_5_V_read   |  in |   64|   ap_none  |                    data_5_V_read                   |    scalar    |
+|data_6_V_read   |  in |   64|   ap_none  |                    data_6_V_read                   |    scalar    |
+|data_7_V_read   |  in |   64|   ap_none  |                    data_7_V_read                   |    scalar    |
+|data_8_V_read   |  in |   64|   ap_none  |                    data_8_V_read                   |    scalar    |
+|data_9_V_read   |  in |   64|   ap_none  |                    data_9_V_read                   |    scalar    |
+|data_10_V_read  |  in |   64|   ap_none  |                   data_10_V_read                   |    scalar    |
+|data_11_V_read  |  in |   64|   ap_none  |                   data_11_V_read                   |    scalar    |
++----------------+-----+-----+------------+----------------------------------------------------+--------------+
+

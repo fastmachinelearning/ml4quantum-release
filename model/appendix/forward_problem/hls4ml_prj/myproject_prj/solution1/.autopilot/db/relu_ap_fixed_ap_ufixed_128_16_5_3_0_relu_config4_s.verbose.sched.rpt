@@ -1,0 +1,136 @@
+
+
+================================================================
+== Vivado HLS Report for 'relu_ap_fixed_ap_ufixed_128_16_5_3_0_relu_config4_s'
+================================================================
+* Date:           Sat Aug  6 20:48:46 2022
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        myproject_prj
+* Solution:       solution1
+* Product family: zynquplus
+* Target device:  xczu3eg-sbva484-1-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   5.00|     1.919|        0.62|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+----------+
+    |  Latency  |  Interval | Pipeline |
+    | min | max | min | max |   Type   |
+    +-----+-----+-----+-----+----------+
+    |    0|    0|    1|    1| function |
+    +-----+-----+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 0
+IsPipeline: 1
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 1
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 1
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 1, States = { 1 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.91>
+ST_1 : Operation 2 [1/1] (0.00ns)   --->   "%data_3_V_read_2 = call i128 @_ssdm_op_Read.ap_auto.i128(i128 %data_3_V_read)" [firmware/nnet_utils/nnet_activation.h:64]   --->   Operation 2 'read' 'data_3_V_read_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 3 [1/1] (0.00ns)   --->   "%data_2_V_read_2 = call i128 @_ssdm_op_Read.ap_auto.i128(i128 %data_2_V_read)" [firmware/nnet_utils/nnet_activation.h:64]   --->   Operation 3 'read' 'data_2_V_read_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%data_1_V_read_2 = call i128 @_ssdm_op_Read.ap_auto.i128(i128 %data_1_V_read)" [firmware/nnet_utils/nnet_activation.h:64]   --->   Operation 4 'read' 'data_1_V_read_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%data_0_V_read_2 = call i128 @_ssdm_op_Read.ap_auto.i128(i128 %data_0_V_read)" [firmware/nnet_utils/nnet_activation.h:64]   --->   Operation 5 'read' 'data_0_V_read_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str15) nounwind" [firmware/nnet_utils/nnet_activation.h:66]   --->   Operation 6 'specpipeline' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (1.46ns)   --->   "%icmp_ln1494 = icmp sgt i128 %data_0_V_read_2, 0" [firmware/nnet_utils/nnet_activation.h:71]   --->   Operation 7 'icmp' 'icmp_ln1494' <Predicate = true> <Delay = 1.46> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.46> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%trunc_ln71 = trunc i128 %data_0_V_read_2 to i127" [firmware/nnet_utils/nnet_activation.h:71]   --->   Operation 8 'trunc' 'trunc_ln71' <Predicate = (icmp_ln1494)> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.45ns)   --->   "%select_ln71 = select i1 %icmp_ln1494, i127 %trunc_ln71, i127 0" [firmware/nnet_utils/nnet_activation.h:71]   --->   Operation 9 'select' 'select_ln71' <Predicate = true> <Delay = 0.45> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.45> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%zext_ln71 = zext i127 %select_ln71 to i128" [firmware/nnet_utils/nnet_activation.h:71]   --->   Operation 10 'zext' 'zext_ln71' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (1.46ns)   --->   "%icmp_ln1494_1 = icmp sgt i128 %data_1_V_read_2, 0" [firmware/nnet_utils/nnet_activation.h:71]   --->   Operation 11 'icmp' 'icmp_ln1494_1' <Predicate = true> <Delay = 1.46> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.46> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%trunc_ln71_8 = trunc i128 %data_1_V_read_2 to i127" [firmware/nnet_utils/nnet_activation.h:71]   --->   Operation 12 'trunc' 'trunc_ln71_8' <Predicate = (icmp_ln1494_1)> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.45ns)   --->   "%select_ln71_8 = select i1 %icmp_ln1494_1, i127 %trunc_ln71_8, i127 0" [firmware/nnet_utils/nnet_activation.h:71]   --->   Operation 13 'select' 'select_ln71_8' <Predicate = true> <Delay = 0.45> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.45> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%zext_ln71_8 = zext i127 %select_ln71_8 to i128" [firmware/nnet_utils/nnet_activation.h:71]   --->   Operation 14 'zext' 'zext_ln71_8' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (1.46ns)   --->   "%icmp_ln1494_2 = icmp sgt i128 %data_2_V_read_2, 0" [firmware/nnet_utils/nnet_activation.h:71]   --->   Operation 15 'icmp' 'icmp_ln1494_2' <Predicate = true> <Delay = 1.46> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.46> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%trunc_ln71_9 = trunc i128 %data_2_V_read_2 to i127" [firmware/nnet_utils/nnet_activation.h:71]   --->   Operation 16 'trunc' 'trunc_ln71_9' <Predicate = (icmp_ln1494_2)> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.45ns)   --->   "%select_ln71_9 = select i1 %icmp_ln1494_2, i127 %trunc_ln71_9, i127 0" [firmware/nnet_utils/nnet_activation.h:71]   --->   Operation 17 'select' 'select_ln71_9' <Predicate = true> <Delay = 0.45> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.45> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%zext_ln71_9 = zext i127 %select_ln71_9 to i128" [firmware/nnet_utils/nnet_activation.h:71]   --->   Operation 18 'zext' 'zext_ln71_9' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (1.46ns)   --->   "%icmp_ln1494_3 = icmp sgt i128 %data_3_V_read_2, 0" [firmware/nnet_utils/nnet_activation.h:71]   --->   Operation 19 'icmp' 'icmp_ln1494_3' <Predicate = true> <Delay = 1.46> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.46> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%trunc_ln71_10 = trunc i128 %data_3_V_read_2 to i127" [firmware/nnet_utils/nnet_activation.h:71]   --->   Operation 20 'trunc' 'trunc_ln71_10' <Predicate = (icmp_ln1494_3)> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.45ns)   --->   "%select_ln71_10 = select i1 %icmp_ln1494_3, i127 %trunc_ln71_10, i127 0" [firmware/nnet_utils/nnet_activation.h:71]   --->   Operation 21 'select' 'select_ln71_10' <Predicate = true> <Delay = 0.45> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.45> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%zext_ln71_10 = zext i127 %select_ln71_10 to i128" [firmware/nnet_utils/nnet_activation.h:71]   --->   Operation 22 'zext' 'zext_ln71_10' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%mrv = insertvalue { i128, i128, i128, i128 } undef, i128 %zext_ln71, 0" [firmware/nnet_utils/nnet_activation.h:74]   --->   Operation 23 'insertvalue' 'mrv' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%mrv_1 = insertvalue { i128, i128, i128, i128 } %mrv, i128 %zext_ln71_8, 1" [firmware/nnet_utils/nnet_activation.h:74]   --->   Operation 24 'insertvalue' 'mrv_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%mrv_2 = insertvalue { i128, i128, i128, i128 } %mrv_1, i128 %zext_ln71_9, 2" [firmware/nnet_utils/nnet_activation.h:74]   --->   Operation 25 'insertvalue' 'mrv_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%mrv_3 = insertvalue { i128, i128, i128, i128 } %mrv_2, i128 %zext_ln71_10, 3" [firmware/nnet_utils/nnet_activation.h:74]   --->   Operation 26 'insertvalue' 'mrv_3' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "ret { i128, i128, i128, i128 } %mrv_3" [firmware/nnet_utils/nnet_activation.h:74]   --->   Operation 27 'ret' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 5ns, clock uncertainty: 0.625ns.
+
+ <State 1>: 1.92ns
+The critical path consists of the following:
+	wire read on port 'data_3_V_read' (firmware/nnet_utils/nnet_activation.h:64) [5]  (0 ns)
+	'icmp' operation ('icmp_ln1494_3', firmware/nnet_utils/nnet_activation.h:71) [22]  (1.46 ns)
+	'select' operation ('res[3].V', firmware/nnet_utils/nnet_activation.h:71) [24]  (0.458 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

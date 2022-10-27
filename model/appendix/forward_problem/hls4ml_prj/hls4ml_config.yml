@@ -1,0 +1,86 @@
+Backend: Vivado
+Board: null
+ClockPeriod: 5
+HLSConfig:
+  LayerName:
+    fc1:
+      Precision:
+        bias: ap_fixed<18,4>
+        result: ap_fixed<23,4>
+        weight: ap_fixed<18,4>
+      ReuseFactor: 1
+    fc1_input:
+      Precision:
+        result: ap_fixed<32,6>
+    fc2:
+      Precision:
+        bias: ap_fixed<18,4>
+        result: ap_fixed<23,4>
+        weight: ap_fixed<18,4>
+      ReuseFactor: 1
+    fc3:
+      Precision:
+        bias: ap_fixed<18,4>
+        result: ap_fixed<16,4>
+        weight: ap_fixed<18,4>
+      ReuseFactor: 1
+    fc4:
+      Precision:
+        bias: ap_fixed<18,4>
+        result: ap_fixed<24,4>
+        weight: ap_fixed<18,4>
+      ReuseFactor: 1
+    fc5:
+      Precision:
+        bias: ap_fixed<18,4>
+        result: ap_fixed<28,4>
+        weight: ap_fixed<18,4>
+      ReuseFactor: 1
+    fc6:
+      Precision:
+        bias: ap_fixed<18,4>
+        result: ap_fixed<28,4>
+        weight: ap_fixed<18,4>
+      ReuseFactor: 1
+    fc7:
+      Precision:
+        bias: ap_fixed<18,4>
+        result: ap_fixed<32,2>
+        weight: ap_fixed<18,4>
+      ReuseFactor: 1
+    relu1:
+      Precision:
+        result: ap_ufixed<22,3>
+      ReuseFactor: 1
+    relu2:
+      Precision:
+        result: ap_ufixed<14,4>
+      ReuseFactor: 1
+    relu3:
+      Precision:
+        result: ap_ufixed<16,4>
+      ReuseFactor: 1
+    relu4:
+      Precision:
+        result: ap_ufixed<24,4>
+      ReuseFactor: 1
+    relu5:
+      Precision:
+        result: ap_ufixed<28,4>
+      ReuseFactor: 1
+    relu6:
+      Precision:
+        result: ap_ufixed<28,4>
+      ReuseFactor: 1
+  Model:
+    Precision: ap_fixed<64,16>
+    ReuseFactor: 1
+    Strategy: Latency
+IOType: io_parallel
+InputData: null
+KerasModel: !keras_model '../model/appendix/forward_problem/hls4ml_prj/keras_model.h5'
+OutputDir: ../model/appendix/forward_problem/hls4ml_prj
+OutputPredictions: null
+ProjectName: myproject
+Stamp: CaC6BaF0
+XilinxPart: xczu3eg-sbva484-1-e

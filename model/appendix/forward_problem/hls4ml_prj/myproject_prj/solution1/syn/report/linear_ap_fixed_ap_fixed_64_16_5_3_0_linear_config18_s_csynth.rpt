@@ -1,0 +1,123 @@
+
+
+================================================================
+== Vivado HLS Report for 'linear_ap_fixed_ap_fixed_64_16_5_3_0_linear_config18_s'
+================================================================
+* Date:           Tue Oct 25 22:21:49 2022
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        myproject_prj
+* Solution:       solution1
+* Product family: zynquplus
+* Target device:  xczu3eg-sbva484-1-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   5.00|     0.000|        0.62|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+----------+
+    |  Latency  |  Interval | Pipeline |
+    | min | max | min | max |   Type   |
+    +-----+-----+-----+-----+----------+
+    |    0|    0|    1|    1| function |
+    +-----+-----+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+-------+-----+
+|       Name      | BRAM_18K| DSP48E|   FF   |  LUT  | URAM|
++-----------------+---------+-------+--------+-------+-----+
+|DSP              |        -|      -|       -|      -|    -|
+|Expression       |        -|      -|       -|      -|    -|
+|FIFO             |        -|      -|       -|      -|    -|
+|Instance         |        -|      -|       -|      -|    -|
+|Memory           |        -|      -|       -|      -|    -|
+|Multiplexer      |        -|      -|       -|      -|    -|
+|Register         |        -|      -|       -|      -|    -|
++-----------------+---------+-------+--------+-------+-----+
+|Total            |        0|      0|       0|      0|    0|
++-----------------+---------+-------+--------+-------+-----+
+|Available        |      432|    360|  141120|  70560|    0|
++-----------------+---------+-------+--------+-------+-----+
+|Utilization (%)  |        0|      0|       0|      0|    0|
++-----------------+---------+-------+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP48E: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    N/A
+
+    * Multiplexer: 
+    N/A
+
+    * Register: 
+    N/A
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++----------------+-----+-----+------------+--------------------------------------------------------+--------------+
+|    RTL Ports   | Dir | Bits|  Protocol  |                      Source Object                     |    C Type    |
++----------------+-----+-----+------------+--------------------------------------------------------+--------------+
+|ap_ready        | out |    1| ap_ctrl_hs | linear<ap_fixed,ap_fixed<64,16,5,3,0>,linear_config18> | return value |
+|ap_return_0     | out |   64| ap_ctrl_hs | linear<ap_fixed,ap_fixed<64,16,5,3,0>,linear_config18> | return value |
+|ap_return_1     | out |   64| ap_ctrl_hs | linear<ap_fixed,ap_fixed<64,16,5,3,0>,linear_config18> | return value |
+|ap_return_2     | out |   64| ap_ctrl_hs | linear<ap_fixed,ap_fixed<64,16,5,3,0>,linear_config18> | return value |
+|ap_return_3     | out |   64| ap_ctrl_hs | linear<ap_fixed,ap_fixed<64,16,5,3,0>,linear_config18> | return value |
+|ap_return_4     | out |   64| ap_ctrl_hs | linear<ap_fixed,ap_fixed<64,16,5,3,0>,linear_config18> | return value |
+|ap_return_5     | out |   64| ap_ctrl_hs | linear<ap_fixed,ap_fixed<64,16,5,3,0>,linear_config18> | return value |
+|ap_return_6     | out |   64| ap_ctrl_hs | linear<ap_fixed,ap_fixed<64,16,5,3,0>,linear_config18> | return value |
+|ap_return_7     | out |   64| ap_ctrl_hs | linear<ap_fixed,ap_fixed<64,16,5,3,0>,linear_config18> | return value |
+|ap_return_8     | out |   64| ap_ctrl_hs | linear<ap_fixed,ap_fixed<64,16,5,3,0>,linear_config18> | return value |
+|ap_return_9     | out |   64| ap_ctrl_hs | linear<ap_fixed,ap_fixed<64,16,5,3,0>,linear_config18> | return value |
+|ap_return_10    | out |   64| ap_ctrl_hs | linear<ap_fixed,ap_fixed<64,16,5,3,0>,linear_config18> | return value |
+|ap_return_11    | out |   64| ap_ctrl_hs | linear<ap_fixed,ap_fixed<64,16,5,3,0>,linear_config18> | return value |
+|data_0_V_read   |  in |   28|   ap_none  |                      data_0_V_read                     |    scalar    |
+|data_1_V_read   |  in |   28|   ap_none  |                      data_1_V_read                     |    scalar    |
+|data_2_V_read   |  in |   28|   ap_none  |                      data_2_V_read                     |    scalar    |
+|data_3_V_read   |  in |   28|   ap_none  |                      data_3_V_read                     |    scalar    |
+|data_4_V_read   |  in |   28|   ap_none  |                      data_4_V_read                     |    scalar    |
+|data_5_V_read   |  in |   28|   ap_none  |                      data_5_V_read                     |    scalar    |
+|data_6_V_read   |  in |   28|   ap_none  |                      data_6_V_read                     |    scalar    |
+|data_7_V_read   |  in |   28|   ap_none  |                      data_7_V_read                     |    scalar    |
+|data_8_V_read   |  in |   28|   ap_none  |                      data_8_V_read                     |    scalar    |
+|data_9_V_read   |  in |   28|   ap_none  |                      data_9_V_read                     |    scalar    |
+|data_10_V_read  |  in |   28|   ap_none  |                     data_10_V_read                     |    scalar    |
+|data_11_V_read  |  in |   28|   ap_none  |                     data_11_V_read                     |    scalar    |
++----------------+-----+-----+------------+--------------------------------------------------------+--------------+
+

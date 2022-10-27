@@ -1,0 +1,65 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'myproject'" level="0">
+<item name = "Date">Tue Oct 25 22:21:43 2022
+</item>
+<item name = "Version">2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)</item>
+<item name = "Project">myproject_prj</item>
+<item name = "Solution">solution1</item>
+<item name = "Product family">zynquplus</item>
+<item name = "Target device">xczu3eg-sbva484-1-e</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">5.00, 4.354, 0.62</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">22, 22, 1, 1, function</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+<column name="grp_dense_latency_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_fu_278">dense_latency_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0_0, 2, 2, 1, 1, function</column>
+<column name="grp_dense_latency_0_0_0_0_0_0_0_0_0_0_0_0_0_fu_294">dense_latency_0_0_0_0_0_0_0_0_0_0_0_0_0, 1, 1, 1, 1, function</column>
+<column name="grp_dense_latency_0_0_0_0_0_0_0_0_0_0_0_0_0_1_fu_310">dense_latency_0_0_0_0_0_0_0_0_0_0_0_0_0_1, 2, 2, 1, 1, function</column>
+<column name="grp_dense_latency_0_0_0_0_0_0_0_0_0_0_0_0_0_2_fu_326">dense_latency_0_0_0_0_0_0_0_0_0_0_0_0_0_2, 1, 1, 1, 1, function</column>
+<column name="grp_dense_latency_0_0_0_0_0_0_0_0_0_0_0_0_0_3_fu_342">dense_latency_0_0_0_0_0_0_0_0_0_0_0_0_0_3, 1, 1, 1, 1, function</column>
+<column name="grp_dense_latency_0_0_0_0_0_0_0_0_0_fu_354">dense_latency_0_0_0_0_0_0_0_0_0, 1, 1, 1, 1, function</column>
+<column name="call_ret14_relu_ap_fixed_ap_ufixed_28_4_5_3_0_relu_config16_s_fu_362">relu_ap_fixed_ap_ufixed_28_4_5_3_0_relu_config16_s, 0, 0, 1, 1, function</column>
+<column name="call_ret17_relu_ap_fixed_ap_ufixed_28_4_5_3_0_relu_config19_s_fu_378">relu_ap_fixed_ap_ufixed_28_4_5_3_0_relu_config19_s, 0, 0, 1, 1, function</column>
+<column name="call_ret11_relu_ap_fixed_ap_ufixed_24_4_5_3_0_relu_config13_s_fu_394">relu_ap_fixed_ap_ufixed_24_4_5_3_0_relu_config13_s, 0, 0, 1, 1, function</column>
+<column name="call_ret8_relu_ap_fixed_ap_ufixed_16_4_5_3_0_relu_config10_s_fu_410">relu_ap_fixed_ap_ufixed_16_4_5_3_0_relu_config10_s, 0, 0, 1, 1, function</column>
+<column name="grp_dense_latency_ap_fixed_ap_fixed_config2_0_0_0_0_0_fu_426">dense_latency_ap_fixed_ap_fixed_config2_0_0_0_0_0, 1, 1, 1, 1, function</column>
+<column name="call_ret5_relu_ap_fixed_ap_ufixed_14_4_5_3_0_relu_config7_s_fu_432">relu_ap_fixed_ap_ufixed_14_4_5_3_0_relu_config7_s, 0, 0, 1, 1, function</column>
+<column name="call_ret2_relu_ap_fixed_ap_ufixed_22_3_5_3_0_relu_config4_s_fu_444">relu_ap_fixed_ap_ufixed_22_3_5_3_0_relu_config4_s, 0, 0, 1, 1, function</column>
+<column name="call_ret19_linear_ap_fixed_ap_fixed_64_16_5_3_0_linear_config21_s_fu_452">linear_ap_fixed_ap_fixed_64_16_5_3_0_linear_config21_s, 0, 0, 1, 1, function</column>
+<column name="call_ret7_linear_ap_fixed_ap_fixed_64_16_5_3_0_linear_config9_s_fu_476">linear_ap_fixed_ap_fixed_64_16_5_3_0_linear_config9_s, 0, 0, 1, 1, function</column>
+<column name="call_ret10_linear_ap_fixed_ap_fixed_64_16_5_3_0_linear_config12_s_fu_492">linear_ap_fixed_ap_fixed_64_16_5_3_0_linear_config12_s, 0, 0, 1, 1, function</column>
+<column name="call_ret13_linear_ap_fixed_ap_fixed_64_16_5_3_0_linear_config15_s_fu_508">linear_ap_fixed_ap_fixed_64_16_5_3_0_linear_config15_s, 0, 0, 1, 1, function</column>
+<column name="call_ret16_linear_ap_fixed_ap_fixed_64_16_5_3_0_linear_config18_s_fu_524">linear_ap_fixed_ap_fixed_64_16_5_3_0_linear_config18_s, 0, 0, 1, 1, function</column>
+<column name="call_ret4_linear_ap_fixed_ap_fixed_64_16_5_3_0_linear_config6_s_fu_540">linear_ap_fixed_ap_fixed_64_16_5_3_0_linear_config6_s, 0, 0, 1, 1, function</column>
+<column name="call_ret1_linear_ap_fixed_ap_fixed_64_16_5_3_0_linear_config3_s_fu_552">linear_ap_fixed_ap_fixed_64_16_5_3_0_linear_config3_s, 0, 0, 1, 1, function</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+</profile>
